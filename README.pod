@@ -1,0 +1,32 @@
+=pod
+
+Text::Template::Light is a small Template Module for Perl5.
+
+=head2 Installation
+
+ git clone git://github.com/krimdomu/p5-text-template-light.git
+ cd p5-text-template-light
+ perl Makefile.PL
+ make
+ make install
+
+=head2 Usage
+
+ use Text::Template::Light;
+
+ my $t = Text::Template::Light->new();
+ my $content = q~
+ Hello, my name is <%+ $::name %>
+
+ This is a simple list:
+ <% for my $num (@::numbers) { %>
+    - <%+ $num %>
+ <% } %>
+ ~;
+
+ print $t->parse($content, {
+   name => 'Test',
+   numbers => ['one', 'two', 'three', 'four']
+ });
+
+=cut
