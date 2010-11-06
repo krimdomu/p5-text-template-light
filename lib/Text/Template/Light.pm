@@ -2,6 +2,10 @@ package Text::Template::Light;
 use strict;
 use warnings;
 
+use vars qw($VERSION);
+
+$VERSION='0.0.1';
+
 sub new {
 	my $that = shift;
 	my $proto = ref($that) || $that;
